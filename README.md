@@ -1,4 +1,5 @@
 # my-vuex
+实现了一个最简单的Vuex，包括了store、getters、mutations、actions
 
 ## Project setup
 ```

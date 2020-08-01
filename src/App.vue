@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    111
+    <p>{{ this.$store.state.num }}</p>
+    <p>name: {{ this.$store.getters.name }}</p>
+    <button @click="$store.commit('add', { num: 1 })">+1</button>
+    <button @click="$store.commit({
+      type: 'add',
+      num: 2
+    })">+2</button>
+    <button @click="$store.dispatch({
+      type: 'addAsync',
+      num: 5
+    })">addAsync</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  mounted() {
+    // 调试用
+    window.$vm0 = this;
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
